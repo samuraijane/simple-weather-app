@@ -1,0 +1,112 @@
+//----------------------------------------------------------------------------
+//  Common
+//----------------------------------------------------------------------------
+.error {
+  background: crimson;
+  color: white;
+  padding: 16px 20px;
+  position: absolute;
+  text-align: center;
+  top: 16%;
+  width: 100%;
+}
+
+//----------------------------------------------------------------------------
+//  Footer
+//----------------------------------------------------------------------------
+div {
+  nav & {
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+  }
+}
+
+.github-icon {
+  width: 40px;
+}
+
+//----------------------------------------------------------------------------
+//  Header
+//----------------------------------------------------------------------------
+p {
+  header & {
+    font-style: italic;
+    margin-top: 6px;
+  }
+}
+
+//----------------------------------------------------------------------------
+//  Location (page left)
+//----------------------------------------------------------------------------
+.location {
+  align-self: center;
+  font-size: 2.5rem;
+  padding: 0 18px 0 0;
+}
+
+//----------------------------------------------------------------------------
+//  Page Center
+//----------------------------------------------------------------------------
+input {
+  .search & {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+    font-size: 1.85rem;
+    padding: 20px 8px;
+    text-align: center;
+    width: 300px;
+  }
+}
+
+.nimg {
+  grid-area: 1 / 2 / 1 / 2;
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+}
+
+.reset {
+  color: crimson;
+  cursor: pointer;
+  font-size: 2.35rem;
+  left: 12px;
+  line-height: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//----------------------------------------------------------------------------
+//  Weather (page right)
+//----------------------------------------------------------------------------
+li {
+  .weather & {
+    color: #ab712b;
+    flex: 1 0 auto;
+    font-size: 1rem;
+  }
+}
+
+.weather {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0 18px;
+}
+
+.weather-icon {
+  bottom: 14px;
+  height: auto;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 80px;
+}
