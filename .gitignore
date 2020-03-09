@@ -7,9 +7,5 @@ src/js/modules/apiKeys.js
 # Mac files
 .DS_Store
 
-# Minified Files
-public/app.min.js
-public/style.min.css
-
 # NPM Dependencies
 node_modules
