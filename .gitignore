@@ -1,4 +1,7 @@
-#Environment
+# Custom
+src/js/modules/apiKeys.js
+
+# Environment
 .env
 
 # Mac files
