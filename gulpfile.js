@@ -14,7 +14,7 @@ const babel = require("gulp-babel"),
 const source = {
   css: "./src/scss/style.scss",
   html: ["./public/*.html", "./src/views/**/*.html"],
-  js: "./src/js/*.js",
+  js: "./src/js/main.js",
   public: "./public",
   scss: "./src/scss/*.scss"
 };
@@ -39,14 +39,14 @@ gulp.task("js", () => {
     .pipe(sourcemaps.init())
     .pipe(
       concat("app.min.js", {
-        newLine: "\n;" //c025
+        newLine: "\n;"
       })
     )
     .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(plumber.stop())
     .pipe(gulp.dest(destination.public))
-    .pipe(wait(1000)) //c026
+    .pipe(wait(1000))
     .pipe(livereload());
 });
 
@@ -64,9 +64,6 @@ gulp.task("sass", () => {
 
 gulp.task("watch", () => {
   livereload.listen();
-  // gulp.watch(source.html, ["html"]);
-  // gulp.watch(source.js, ["js"]);
-  // gulp.watch(source.scss, ["sass"]);
   gulp.watch(source.html, gulp.series("html"));
   gulp.watch(source.js, gulp.series("js"));
   gulp.watch(source.scss, gulp.series("sass"));
