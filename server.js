@@ -16,6 +16,10 @@ app.get("/heartbeat", function(req, res) {
   });
 });
 
+const { locationRouter, weatherRouter } = require("./routes");
+app.use("/location", locationRouter);
+app.use("/weather", weatherRouter);
+
 app.listen(PORT, function() {
   console.log(`The server at port ${PORT} is listening.`);
 });
