@@ -16,6 +16,12 @@ app.get("/heartbeat", function(req, res) {
   });
 });
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3001");
+  res.header("Access-Control-Allow-Methods", "GET");
+  next();
+});
+
 const { locationRouter, weatherRouter } = require("./routes");
 app.use("/location", locationRouter);
 app.use("/weather", weatherRouter);
