@@ -3,7 +3,6 @@ import { locationBlock } from "./locationBlock.js";
 import { getWeatherData } from "./weatherSearch.js";
 import { resetState } from "./resetState.js";
 import { showError } from "./showError.js";
-import { ZIP_CODE_API_KEY } from "./apiKeys.js";
 
 const getLocationData = zipCode => {
   const htmlError = {
@@ -14,7 +13,12 @@ const getLocationData = zipCode => {
     theClass: "error"
   };
 
-  function handleZipCodeResponse(data) {
+  function handleLocationResponse(data) {
+    if (data && !data.error_code) locationBlock();
+    if (data && data.error_code >= 400) {
+      htmlError.content = data.error_msg;
+      addElement(htmlError);
+    }
     const city = document.getElementById("t-location-city");
     const state = document.getElementById("t-location-state");
     if (data.city) {
@@ -24,21 +28,11 @@ const getLocationData = zipCode => {
     }
   }
 
-  const baseUrl = "http://www.zipcodeapi.com/rest";
-  const path = `${baseUrl}/${ZIP_CODE_API_KEY}/info.json/${zipCode}/radians`;
+  // const path = `http://localhost:3001/location/${zipCode}`;
+  const path = `https://sj-weather.herokuapp.com/location/${zipCode}`;
   fetch(path)
-    .then(response => {
-      if (response.status === 200) locationBlock();
-      if (response.status === 404) {
-        htmlError.content =
-          "The zip code you entered does not exist. Please try your search again.";
-        addElement(htmlError);
-      }
-      return response.json();
-    })
-    .then(data => {
-      handleZipCodeResponse(data);
-    })
+    .then(res => res.json())
+    .then(data => handleLocationResponse(data))
     .catch(error => {
       if (
         error.responseText &&

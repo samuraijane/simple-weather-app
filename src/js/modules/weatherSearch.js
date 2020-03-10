@@ -1,6 +1,5 @@
 import { addElement } from "./addElement.js";
 import { locationBlock } from "./locationBlock.js";
-import { WEATHER_API_KEY } from "./apiKeys.js";
 import { weatherBlock } from "./weatherBlock.js";
 
 // HANDLE WEATHER REPONSE
@@ -71,8 +70,8 @@ const getWeatherData = area => {
     theClass: "error"
   };
 
-  const baseUrl = "https://api.openweathermap.org/data/2.5/weather?zip=";
-  const path = `${baseUrl}${area},us&appid=${WEATHER_API_KEY}`;
+  // const path = `http://localhost:3001/weather/${area}`;
+  const path = `https://sj-weather.herokuapp.com/weather/${area}`;
   fetch(path)
     .then(response => {
       if (response.status === 200) weatherBlock();
