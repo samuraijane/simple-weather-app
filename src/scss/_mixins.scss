@@ -1,10 +1,22 @@
 //----------------------------------------------------------------------------
-//  Transitions
+//  Responsive
 //----------------------------------------------------------------------------
-// @mixin transition($time) {
-//   -webkit-transition: all $time ease-in-out;
-//   -moz-transition: all $time ease-in-out;
-//   -ms-transition: all $time ease-in-out;
-//   -o-transition: all $time ease-in-out;
-//   transition: all $time ease-in-out;
-// }
+@mixin responsive($size) {
+  @if $size == small {
+    @media only screen and (min-width: $small) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media only screen and (min-width: $medium) {
+      @content;
+    }
+  } @else if $size == large {
+    @media only screen and (min-width: $large) {
+      @content;
+    }
+  } @else if $size == xlarge {
+    @media only screen and (min-width: $xlarge) {
+      @content;
+    }
+  }
+}

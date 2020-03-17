@@ -1,18 +1,17 @@
-.y-home {
-  display: grid;
-  grid-template-columns: 30% 40% 30%;
-}
-
 .y-stats {
   display: flex;
   justify-content: space-between;
 }
 
 .y-wrap {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   margin: 0 auto;
   max-width: 1200px;
   width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(min-content, 6%) 1260px minmax(min-content, 60px);
+  @include responsive(medium) {
+    grid-template-rows: minmax(min-content, 6%) auto minmax(min-content, 10%);
+    height: 100vh;
+  }
 }
