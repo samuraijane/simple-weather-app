@@ -1,4 +1,4 @@
-import { removeElement } from "./removeElement.js";
+import removeElement from "./removeElement.js";
 
 const resetState = () => {
   const elementsWithValues = ["t-zipCodeInput"];
@@ -19,4 +19,4 @@ const resetState = () => {
   });
 };
 
-export { resetState };
+export default resetState;

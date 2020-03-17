@@ -1,5 +1,5 @@
-import { addElement } from "./addElement.js";
-import { removeElement } from "./removeElement.js";
+import addElement from "./addElement.js";
+import removeElement from "./removeElement.js";
 
 const showError = type => {
   const typeMap = {
@@ -20,4 +20,4 @@ const showError = type => {
   }, 2500);
 };
 
-export { showError };
+export default showError;

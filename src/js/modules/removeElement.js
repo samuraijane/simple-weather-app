@@ -3,4 +3,4 @@ const removeElement = element => {
   if (isInDom) document.getElementById(element).remove();
 };
 
-export { removeElement };
+export default removeElement;
