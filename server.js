@@ -4,6 +4,7 @@ const { PORT } = require("./config");
 const app = express();
 
 app.use("/", express.static(__dirname + "/public"));
+app.use("/api", express.static(__dirname + "/src/api"));
 app.use("/assets", express.static(__dirname + "/src/assets"));
 app.use("/js", express.static(__dirname + "/src/js"));
 app.use("/src", express.static(__dirname + "/src"));
