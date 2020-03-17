@@ -21,7 +21,7 @@ const views = {
   home: {
     id: "t-main",
     onInit: true,
-    scriptSrc: "../js/modules/zipCodeSearch.js",
+    scriptSrc: "../js/modules/search.js",
     url: `${path}/main/home.html`
   }
 };
