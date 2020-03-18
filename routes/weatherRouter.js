@@ -21,6 +21,13 @@ router.get("/:area", (req, res) => {
       } else {
         return res.status(200).json(data);
       }
+    })
+    .catch(error => {
+      console.error("\nAPI ERROR", error, "\n");
+      res.status(500).json({
+        error:
+          "Something went wrong with checking the weather. Open the console to review the error."
+      });
     });
 });
 

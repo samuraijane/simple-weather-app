@@ -18,9 +18,10 @@ router.get("/:zipcode", (req, res) => {
       }
     })
     .catch(error => {
-      console.error("\nAPI ERROR\n", error);
+      console.error("\nAPI ERROR", error, "\n");
       res.status(500).json({
-        error: "Something went wrong. Check with your addministrator."
+        error:
+          "Something went wrong with checking the zip code. Open the console to review the error."
       });
     });
 });

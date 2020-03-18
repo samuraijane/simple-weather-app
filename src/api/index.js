@@ -31,9 +31,10 @@ export default class Api {
         };
       });
     } catch (error) {
+      console.error("\nERROR", error, "\n");
       return {
         error: true,
-        message: "Cannot connect to server. Speaker with your administrator.",
+        message: "Cannot connect to server. Speak with your administrator.",
         status: "0000"
       };
     }
