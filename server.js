@@ -18,7 +18,17 @@ app.get("/heartbeat", function(req, res) {
 });
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3001");
+  const host = req.headers.origin;
+  let whitelist = [
+    "http://sj-weather.herokuapp.com",
+    "https://sj-weather.herokuapp.com",
+    "http://localhost:3001"
+  ];
+  whitelist.forEach((item, index) => {
+    if (host.indexOf(item) > -1) {
+      res.header("Access-Control-Allow-Origin", host);
+    }
+  });
   res.header("Access-Control-Allow-Methods", "GET");
   next();
 });
