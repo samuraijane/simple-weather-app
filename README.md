@@ -2,7 +2,7 @@
 
 ### Installation
 
-1. Open an instance of command tool that recognizes `git` commands
+1. Open an instance of a command line tool that recognizes `git` commands
 2. `git clone https://github.com/samuraijane/simple-weather-app.git`
 3. `cd simple-weather-app`
 4. `npm install`
@@ -30,7 +30,7 @@ This application uses [ZipCodeApi](https://www.zipcodeapi.com/) and [OpenWeather
 
 1. [Gulp](https://gulpjs.com/) task runner, [Nodemon](https://www.npmjs.com/package/nodemon) and Chrome's [Livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) extension for browser refreshing on save.
 2. [Babel](https://babeljs.io/) but only as a dependency for other packages.
-3. This project is not built on create-react-app and does not use Webpack. That isn't to say we are against using these tools, we simply decided not to for this round.
+3. This project is does not use any JavaScript front-end libraries or frameworks
 
 ##### UI
 
@@ -49,5 +49,5 @@ This project does not include any automated tests.
 
 ### Browser Compatibility
 
-We are grateful that we did not have a business analyst reminding us that some people still use Internet Explorer. As this app uses CSS Grid extensively, do not look at in IE as it may cause depression and judgemental feelings that you need to let go of anyway.
+We are grateful that we did not have a business analyst reminding us that some people still use Internet Explorer. As this app uses CSS Grid extensively, do not look at it with IE as it may cause depression and judgemental feelings that you need to let go of anyway.
 We guarantee only that it will work flawlessly in Chrome on a Mac. If there are broken components when using other operating systems and browsers, we may get to them... eventually.
