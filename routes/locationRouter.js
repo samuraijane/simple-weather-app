@@ -17,11 +17,12 @@ router.get("/:zipcode", (req, res) => {
         res.status(200).json(data);
       }
     })
-    .catch(error =>
+    .catch(error => {
+      console.error("\nAPI ERROR\n", error);
       res.status(500).json({
         error: "Something went wrong. Check with your addministrator."
-      })
-    );
+      });
+    });
 });
 
 module.exports = { router };
